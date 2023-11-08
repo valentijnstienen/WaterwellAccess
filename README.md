@@ -1,8 +1,10 @@
 # WaterwellAccess
 Supplements to the paper "A method for huge scale maximum covering facility location problems with an application to water well placement in West Darfur".
 
+This paper is about solving hugh-scale (capacitated) facility location problems with a maximizing coverage objective. The idea is to use clustering to find subproblems that we can easily solve, which we then integrate into a solution for the original huge-scale problem. For details, we refer to the paper. 
+
 ## Clustering
-First step is to cluster using the DBSCAN algortihm. This will result in a set of clusters that are at least 500m distance from each other. To run the algorithm, run  
+The first step is to cluster using the DBSCAN algortihm. This will result in a set of clusters that are at least 500m distance from each other. To run the algorithm, run  
 [main_clustering.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/main_clustering.py)
 
 Now, you can examine the resulting data to see if the clusters are small enough such that the facility locaiton problems can be solved to optimality for all the clusters. If not, you may want to create _subclusters_. Set a maximum amount of locations and run 
@@ -17,7 +19,7 @@ Note that in the [main_clustering_2.py](https://github.com/valentijnstienen/Wate
 ## Create coverage curves
 Next, we create the coverage curves (see paper) for all the individual (sub)clusters. You can do this by first filling in the [SETTINGS.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/SETTINGS.py) file to your wishes. For instance, include informaton about whether you want to include capacity or not, etc. Then run the [main.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/main.py) file. The result is that we have a coverage curve for each clusters. Example coverage curves are given below: 
 
-<img src="readmefigures/coveragecurves_ex.png" width="400">
+<img src="readmefigures/coveragecurves_ex.png" width="500", align=center>
 
 ## Maximize the coverage
 Finally, given the information of the previous step, we determine for each cluster how many facilities are assigned to this cluster, such that we maximize the total coverage (over the whole region). To do this run [optimizing_coverage.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/optimizing_coverage.py)
