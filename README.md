@@ -19,7 +19,7 @@ Note that in the [main_clustering_2.py](https://github.com/valentijnstienen/Wate
 ## Create coverage curves
 Next, we create the coverage curves (see paper) for all the individual (sub)clusters. You can do this by first filling in the [SETTINGS.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/SETTINGS.py) file to your wishes. For instance, include informaton about whether you want to include capacity or not, etc. Then run the [main.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/main.py) file. The result is that we have a coverage curve for each clusters. Example coverage curves are given below: 
 
-<img src="readmefigures/coveragecurves_ex.png" width="500", align=center>
+<img src="readmefigures/coveragecurves_ex.png" width="500">
 
 ## Maximize the coverage
 Finally, given the information of the previous step, we determine for each cluster how many facilities are assigned to this cluster, such that we maximize the total coverage (over the whole region). To do this run [optimizing_coverage.py](https://github.com/valentijnstienen/WaterwellAccess/blob/main/optimizing_coverage.py)
